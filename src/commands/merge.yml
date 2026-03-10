@@ -1,0 +1,52 @@
+description: >
+  Fuehrt mehrere PDF-Dateien in der angegebenen Reihenfolge zusammen. Die
+  Eingaben werden als mehrzeilige Liste uebergeben, damit Pfade mit Leerzeichen
+  stabil verarbeitet werden.
+
+parameters:
+  inputs:
+    type: string
+    description: "Mehrzeilige Liste von PDF-Pfaden, jeweils eine Datei pro Zeile."
+  output:
+    type: string
+    description: "Zielpfad fuer die zusammengefuehrte PDF-Datei."
+  workdir:
+    type: string
+    default: "."
+    description: "Arbeitsverzeichnis, relativ zum Checkout oder absolut."
+  version:
+    type: string
+    default: "0.1.0"
+    description: "Release-Version, die bei Bedarf ueber install geladen wird."
+  destination:
+    type: string
+    default: "~/bin"
+    description: "Installationsverzeichnis fuer pdfzus-merge."
+  bookmarks:
+    type: boolean
+    default: false
+    description: "Erzeugt Lesezeichen fuer jede Eingabedatei."
+  divider:
+    type: boolean
+    default: false
+    description: "Fuegt Trennseiten zwischen den Eingabedateien ein."
+  optimize:
+    type: boolean
+    default: true
+    description: "Optimiert das Ergebnis nach dem Merge."
+
+steps:
+  - install:
+      version: << parameters.version >>
+      destination: << parameters.destination >>
+  - run:
+      name: PDFs zusammenfuegen
+      environment:
+        ORB_PARAM_INPUTS: << parameters.inputs >>
+        ORB_PARAM_OUTPUT: << parameters.output >>
+        ORB_PARAM_WORKDIR: << parameters.workdir >>
+        ORB_PARAM_BOOKMARKS: << parameters.bookmarks >>
+        ORB_PARAM_DIVIDER: << parameters.divider >>
+        ORB_PARAM_OPTIMIZE: << parameters.optimize >>
+      command: <<include(scripts/merge.sh)>>
+

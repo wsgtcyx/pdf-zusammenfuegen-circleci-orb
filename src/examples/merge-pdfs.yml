@@ -1,0 +1,20 @@
+description: >
+  Fuegt mehrere PDF-Dateien aus dem Repository in einer CircleCI-Pipeline
+  zusammen und speichert das Ergebnis unter dist/bewerbung-komplett.pdf.
+
+usage:
+  version: 2.1
+  orbs:
+    pdfmerge: wsgtcyx/pdf-zusammenfuegen@0.1.0
+  workflows:
+    merge-bewerbung:
+      jobs:
+        - pdfmerge/merge:
+            inputs: |
+              docs/anschreiben.pdf
+              docs/lebenslauf.pdf
+              docs/zeugnisse.pdf
+            output: dist/bewerbung-komplett.pdf
+            bookmarks: true
+            optimize: true
+

@@ -1,0 +1,51 @@
+description: >
+  Standard-Job auf Basis von cimg/base:stable. Fuehrt einen Checkout aus,
+  installiert pdfzus-merge und erstellt ein zusammengefuehrtes PDF.
+
+parameters:
+  version:
+    type: string
+    default: "0.1.0"
+    description: "Release-Version des pdfzus-merge-Binaries."
+  destination:
+    type: string
+    default: "~/bin"
+    description: "Installationsverzeichnis fuer pdfzus-merge."
+  inputs:
+    type: string
+    description: "Mehrzeilige Liste von PDF-Pfaden, jeweils eine Datei pro Zeile."
+  output:
+    type: string
+    description: "Zielpfad fuer die zusammengefuehrte PDF-Datei."
+  workdir:
+    type: string
+    default: "."
+    description: "Arbeitsverzeichnis fuer den Merge."
+  bookmarks:
+    type: boolean
+    default: false
+    description: "Erzeugt Lesezeichen fuer jede Eingabedatei."
+  divider:
+    type: boolean
+    default: false
+    description: "Fuegt Trennseiten ein."
+  optimize:
+    type: boolean
+    default: true
+    description: "Optimiert die Ausgabe nach dem Merge."
+
+docker:
+  - image: cimg/base:stable
+
+steps:
+  - checkout
+  - merge:
+      version: << parameters.version >>
+      destination: << parameters.destination >>
+      inputs: << parameters.inputs >>
+      output: << parameters.output >>
+      workdir: << parameters.workdir >>
+      bookmarks: << parameters.bookmarks >>
+      divider: << parameters.divider >>
+      optimize: << parameters.optimize >>
+

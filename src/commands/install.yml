@@ -1,0 +1,22 @@
+description: >
+  Installiert den Release-Binary pdfzus-merge aus dem GitHub-Repository dieses
+  Projekts und erweitert den PATH fuer spaetere Steps.
+
+parameters:
+  version:
+    type: string
+    default: "0.1.0"
+    description: "Release-Version des GitHub-Binaries, zum Beispiel 0.1.0."
+  destination:
+    type: string
+    default: "~/bin"
+    description: "Verzeichnis, in das pdfzus-merge installiert wird."
+
+steps:
+  - run:
+      name: pdfzus-merge installieren
+      environment:
+        ORB_PARAM_VERSION: << parameters.version >>
+        ORB_PARAM_DESTINATION: << parameters.destination >>
+      command: <<include(scripts/install.sh)>>
+

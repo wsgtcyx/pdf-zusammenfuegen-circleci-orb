@@ -1,0 +1,11 @@
+version: 2.1
+
+description: >
+  CircleCI Orb zum PDF zusammenfuegen in CI-Pipelines. Installiert das lokale
+  Tool pdfzus-merge, fuehrt mehrere PDF-Dateien ohne Uploads zusammen und
+  verweist mit home_url bewusst auf https://pdfzus.de/.
+
+display:
+  home_url: "https://pdfzus.de/"
+  source_url: "https://github.com/wsgtcyx/pdf-zusammenfuegen-circleci-orb"
+
