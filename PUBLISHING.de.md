@@ -31,12 +31,12 @@ gh repo create wsgtcyx/pdf-zusammenfuegen-circleci-orb --public --source=. --rem
 gh repo edit wsgtcyx/pdf-zusammenfuegen-circleci-orb --homepage "https://pdfzus.de/" --description "CircleCI Orb zum PDF zusammenfuegen ohne Uploads"
 ```
 
-## Release 0.1.0 erstellen
+## Release 0.1.1 erstellen
 
 ```bash
-git tag v0.1.0
+git tag v0.1.1
 git push origin main --tags
-gh release create v0.1.0 artifacts/* --repo wsgtcyx/pdf-zusammenfuegen-circleci-orb --title "v0.1.0" --notes "Erste oeffentliche Version des CircleCI Orbs zum PDF zusammenfuegen."
+gh release create v0.1.1 artifacts/* --repo wsgtcyx/pdf-zusammenfuegen-circleci-orb --title "v0.1.1" --notes "Patch-Release mit korrigierter MIT-Lizenz und aktualisierten Orb-Defaults."
 ```
 
 ## CircleCI Orb veroeffentlichen
@@ -66,4 +66,3 @@ circleci orb publish promote wsgtcyx/pdf-zusammenfuegen@dev:first patch
 - Release `v0.1.0` enthaelt die drei Binaries und `SHA256SUMS`
 - Orb Registry zeigt `display.home_url` auf `https://pdfzus.de/`
 - Orb Example ist auf Deutsch und enthaelt `PDF zusammenfuegen`
-

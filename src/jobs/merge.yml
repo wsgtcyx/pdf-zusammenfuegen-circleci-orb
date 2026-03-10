@@ -5,7 +5,7 @@ description: >
 parameters:
   version:
     type: string
-    default: "0.1.0"
+    default: "0.1.1"
     description: "Release-Version des pdfzus-merge-Binaries."
   destination:
     type: string
@@ -48,4 +48,3 @@ steps:
       bookmarks: << parameters.bookmarks >>
       divider: << parameters.divider >>
       optimize: << parameters.optimize >>
-

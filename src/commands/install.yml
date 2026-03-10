@@ -5,8 +5,8 @@ description: >
 parameters:
   version:
     type: string
-    default: "0.1.0"
-    description: "Release-Version des GitHub-Binaries, zum Beispiel 0.1.0."
+    default: "0.1.1"
+    description: "Release-Version des GitHub-Binaries, zum Beispiel 0.1.1."
   destination:
     type: string
     default: "~/bin"
@@ -19,4 +19,3 @@ steps:
         ORB_PARAM_VERSION: << parameters.version >>
         ORB_PARAM_DESTINATION: << parameters.destination >>
       command: <<include(scripts/install.sh)>>
-

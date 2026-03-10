@@ -5,7 +5,7 @@ description: >
 usage:
   version: 2.1
   orbs:
-    pdfmerge: wsgtcyx/pdf-zusammenfuegen@0.1.0
+    pdfmerge: wsgtcyx/pdf-zusammenfuegen@0.1.1
   workflows:
     merge-bewerbung:
       jobs:
@@ -17,4 +17,3 @@ usage:
             output: dist/bewerbung-komplett.pdf
             bookmarks: true
             optimize: true
-

@@ -16,7 +16,7 @@ parameters:
     description: "Arbeitsverzeichnis, relativ zum Checkout oder absolut."
   version:
     type: string
-    default: "0.1.0"
+    default: "0.1.1"
     description: "Release-Version, die bei Bedarf ueber install geladen wird."
   destination:
     type: string
@@ -49,4 +49,3 @@ steps:
         ORB_PARAM_DIVIDER: << parameters.divider >>
         ORB_PARAM_OPTIMIZE: << parameters.optimize >>
       command: <<include(scripts/merge.sh)>>
-

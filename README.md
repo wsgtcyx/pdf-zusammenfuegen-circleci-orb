@@ -27,7 +27,7 @@
 version: 2.1
 
 orbs:
-  pdfmerge: wsgtcyx/pdf-zusammenfuegen@0.1.0
+  pdfmerge: wsgtcyx/pdf-zusammenfuegen@0.1.1
 
 workflows:
   merge-bewerbung:
@@ -50,7 +50,7 @@ Installiert `pdfzus-merge` aus den GitHub Releases dieses Projekts.
 
 Parameter:
 
-- `version`: Release-Version wie `0.1.0`
+- `version`: Release-Version wie `0.1.1`
 - `destination`: Zielordner fuer die Binary, Standard `~/bin`
 
 ### Command `merge`
@@ -111,4 +111,3 @@ Dieses Projekt ist absichtlich kein generischer Demo-Orb. Es ist ein reales Tool
 - Orb Registry `display.home_url`
 - GitHub About Website
 - README und Nutzungsbeispiele
-
