@@ -56,7 +56,7 @@ circleci orb publish orb.yml wsgtcyx/pdf-zusammenfuegen@dev:first
 Die Dev-Version mit einer echten Pipeline pruefen und danach promoten:
 
 ```bash
-circleci orb publish promote wsgtcyx/pdf-zusammenfuegen@dev:first patch
+circleci orb publish orb.yml wsgtcyx/pdf-zusammenfuegen@0.1.1
 ```
 
 ## Nachkontrolle
